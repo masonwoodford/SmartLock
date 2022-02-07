@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-hM-wbS" userLabel="Unlock Button">
-                                <rect key="frame" x="147" y="692" width="120" height="54"/>
+                                <rect key="frame" x="20" y="726" width="166" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
@@ -27,9 +27,19 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PvW-bc-v7A">
-                                <rect key="frame" x="52" y="126" width="310" height="526"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="582"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2F-d0-GKr" userLabel="Locate Button">
+                                <rect key="frame" x="206" y="726" width="163" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Locate Bike"/>
+                                <connections>
+                                    <action selector="locateLock:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ni4-Y3-ohY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,7 +65,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="lockMap" destination="PvW-bc-v7A" id="48r-eA-03B"/>
+                        <outlet property="locateButton" destination="i2F-d0-GKr" id="g8D-nC-5KO"/>
+                        <outlet property="lockMapView" destination="PvW-bc-v7A" id="nBE-M5-wkk"/>
                         <outlet property="lockToggle" destination="x5F-wr-G47" id="LfO-pH-dLz"/>
                         <outlet property="unlockButton" destination="VJw-hM-wbS" id="nk0-lJ-6bg"/>
                     </connections>
@@ -125,6 +136,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

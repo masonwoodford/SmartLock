@@ -10,6 +10,7 @@ import MapKit
 class BikeLocation : NSObject, MKAnnotation {
     let title: String?
     let coordinate: CLLocationCoordinate2D
+    var subtitle: String? = "Bike Location"
 
     init(title: String?, coordinate: CLLocationCoordinate2D) {
         self.title = title
