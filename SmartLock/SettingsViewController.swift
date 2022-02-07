@@ -8,14 +8,30 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    
+    @IBOutlet weak var defaultLockToggle: UISegmentedControl!
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        defaultLockToggle.selectedSegmentIndex = defaults.integer(forKey: "defaultLock")
     }
     
-
+    @IBAction func toggleDefaultLock(_ sender: Any) {
+        if defaults.integer(forKey: "defaultLock") == 0 {
+            defaults.set(1, forKey: "defaultLock")
+            defaultLockToggle.selectedSegmentIndex = 1
+        } else {
+            defaults.set(0, forKey: "defaultLock")
+            defaultLockToggle.selectedSegmentIndex = 0
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        defaults.synchronize()
+    }
+    
     /*
     // MARK: - Navigation
 
