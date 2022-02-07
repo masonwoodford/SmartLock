@@ -55,6 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="lockMap" destination="PvW-bc-v7A" id="48r-eA-03B"/>
                         <outlet property="lockToggle" destination="x5F-wr-G47" id="LfO-pH-dLz"/>
                         <outlet property="unlockButton" destination="VJw-hM-wbS" id="nk0-lJ-6bg"/>
                     </connections>

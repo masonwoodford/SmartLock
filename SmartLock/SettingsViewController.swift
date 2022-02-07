@@ -11,18 +11,22 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var defaultLockToggle: UISegmentedControl!
     let defaults = UserDefaults.standard
+    let lockIndexKey = "defaultLock"
+    var defaultLockIndex: Int {
+        return defaults.integer(forKey: lockIndexKey)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultLockToggle.selectedSegmentIndex = defaults.integer(forKey: "defaultLock")
+        defaultLockToggle.selectedSegmentIndex = defaultLockIndex
     }
     
     @IBAction func toggleDefaultLock(_ sender: Any) {
-        if defaults.integer(forKey: "defaultLock") == 0 {
-            defaults.set(1, forKey: "defaultLock")
+        if defaultLockIndex == 0 {
+            defaults.set(1, forKey: lockIndexKey)
             defaultLockToggle.selectedSegmentIndex = 1
         } else {
-            defaults.set(0, forKey: "defaultLock")
+            defaults.set(0, forKey: lockIndexKey)
             defaultLockToggle.selectedSegmentIndex = 0
         }
     }
@@ -31,15 +35,5 @@ class SettingsViewController: UIViewController {
         super.viewWillDisappear(animated)
         defaults.synchronize()
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

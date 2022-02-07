@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var lockToggle: UISegmentedControl!
-    var toggleIndex = UserDefaults.standard.integer(forKey: "defaultLock")
+    @IBOutlet weak var lockMap: MKMapView!
+    var toggleIndex: Int?
+    let lockIndexKey = "defaultLock"
+    let unlockPrompt = "Unlock"
+    let lockPrompt = "Lock"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +26,8 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        lockToggle.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "defaultLock")
-        toggleIndex = UserDefaults.standard.integer(forKey: "defaultLock")
+        toggleIndex = UserDefaults.standard.integer(forKey: lockIndexKey)
+        lockToggle.selectedSegmentIndex = toggleIndex ?? 0
     }
     
     @IBAction func toggleLockStatus(_ sender: Any) {
@@ -31,10 +36,10 @@ class ViewController: UIViewController {
         } else {
             unlockButton.tintColor = UIColor.green
         }
-        if unlockButton.title(for: UIControl.State.normal) == "Unlock" {
-            unlockButton.setTitle("Lock", for: UIControl.State.normal)
+        if unlockButton.title(for: UIControl.State.normal) == unlockPrompt {
+            unlockButton.setTitle(lockPrompt, for: UIControl.State.normal)
         } else {
-            unlockButton.setTitle("Unlock", for: UIControl.State.normal)
+            unlockButton.setTitle(unlockPrompt, for: UIControl.State.normal)
         }
     }
     
