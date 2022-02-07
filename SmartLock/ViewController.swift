@@ -63,8 +63,8 @@ class ViewController: UIViewController {
     @IBAction func locateLock(_ sender: Any) {
         lockMapView.addAnnotation(testLocation)
         lockMapView.setCenter(testCoordinates, animated: true)
-        let region = MKCoordinateRegion(center: testCoordinates, span: zoomSpan ?? MKCoordinateSpan(latitudeDelta: 250, longitudeDelta: 250))
-        print(region)
+        let region = MKCoordinateRegion(center: testCoordinates, span: zoomSpan ?? MKCoordinateSpan(latitudeDelta: 250.0, longitudeDelta: 250.0))
+        //lockMapView.setRegion(region, animated: false)
     }
     
 }
