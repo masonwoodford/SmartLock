@@ -18,7 +18,7 @@
 		6F9B2A7327AF79EC00174DCF /* SmartLockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B2A7227AF79EC00174DCF /* SmartLockUITestsLaunchTests.swift */; };
 		6F9B2A8027AF985A00174DCF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B2A7F27AF985A00174DCF /* SettingsViewController.swift */; };
 		6F9B2A8427B0DCCD00174DCF /* BikeLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B2A8327B0DCCD00174DCF /* BikeLocation.swift */; };
-		6F9B2A8627B0E13800174DCF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B2A8527B0E13800174DCF /* MapViewController.swift */; };
+		6F9B2A8C27B0F58200174DCF /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9B2A8B27B0F58200174DCF /* AlarmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		6F9B2A7227AF79EC00174DCF /* SmartLockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartLockUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6F9B2A7F27AF985A00174DCF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6F9B2A8327B0DCCD00174DCF /* BikeLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeLocation.swift; sourceTree = "<group>"; };
-		6F9B2A8527B0E13800174DCF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6F9B2A8B27B0F58200174DCF /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +109,8 @@
 				6F9B2A5127AF79EB00174DCF /* SceneDelegate.swift */,
 				6F9B2A5327AF79EB00174DCF /* ViewController.swift */,
 				6F9B2A5527AF79EB00174DCF /* Main.storyboard */,
+				6F9B2A8B27B0F58200174DCF /* AlarmViewController.swift */,
 				6F9B2A7F27AF985A00174DCF /* SettingsViewController.swift */,
-				6F9B2A8527B0E13800174DCF /* MapViewController.swift */,
 				6F9B2A5827AF79EC00174DCF /* Assets.xcassets */,
 				6F9B2A5A27AF79EC00174DCF /* LaunchScreen.storyboard */,
 				6F9B2A5D27AF79EC00174DCF /* Info.plist */,
@@ -268,8 +268,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F9B2A5427AF79EB00174DCF /* ViewController.swift in Sources */,
-				6F9B2A8627B0E13800174DCF /* MapViewController.swift in Sources */,
 				6F9B2A5027AF79EB00174DCF /* AppDelegate.swift in Sources */,
+				6F9B2A8C27B0F58200174DCF /* AlarmViewController.swift in Sources */,
 				6F9B2A8427B0DCCD00174DCF /* BikeLocation.swift in Sources */,
 				6F9B2A5227AF79EB00174DCF /* SceneDelegate.swift in Sources */,
 				6F9B2A8027AF985A00174DCF /* SettingsViewController.swift in Sources */,

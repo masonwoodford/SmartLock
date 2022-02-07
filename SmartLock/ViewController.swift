@@ -14,16 +14,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var lockToggle: UISegmentedControl!
     @IBOutlet weak var lockMapView: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
+    @IBOutlet weak var alarmTestButton: UIButton!
     var toggleIndex: Int?
-    var testLocation = BikeLocation(title: "Test Location", coordinate: CLLocationCoordinate2D(latitude: 36.988100, longitude: 122.058200))
+    var testLocation = BikeLocation(title: "Test Location", coordinate: CLLocationCoordinate2D(latitude: 36.97720, longitude: -122.05368))
+    var zoomSpan: MKCoordinateSpan?
     let lockIndexKey = "defaultLock"
     let unlockPrompt = "Unlock"
     let lockPrompt = "Lock"
+    let testCoordinates = CLLocationCoordinate2D(latitude: 36.97720, longitude: -122.05368)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         unlockButton.tintColor = UIColor.red
         unlockButton.setTitle(unlockPrompt, for: UIControl.State.normal)
+        zoomSpan?.latitudeDelta = 500
+        zoomSpan?.longitudeDelta = 500
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +62,9 @@ class ViewController: UIViewController {
     
     @IBAction func locateLock(_ sender: Any) {
         lockMapView.addAnnotation(testLocation)
+        lockMapView.setCenter(testCoordinates, animated: true)
+        let region = MKCoordinateRegion(center: testCoordinates, span: zoomSpan ?? MKCoordinateSpan(latitudeDelta: 250, longitudeDelta: 250))
+        print(region)
     }
     
 }
