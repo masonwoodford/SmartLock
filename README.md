@@ -4,7 +4,7 @@ Smart bike lock is an iOS app that allows monitoring and maintaining your bike l
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2022 Mason Woodford
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
