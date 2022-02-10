@@ -8,7 +8,7 @@
 import MapKit
 
 class BikeLocation : NSObject, MKAnnotation {
-    let title: String?
+    var title: String?
     let coordinate: CLLocationCoordinate2D
     var subtitle: String? = "Bike Location"
 
@@ -17,4 +17,8 @@ class BikeLocation : NSObject, MKAnnotation {
         self.coordinate = coordinate
         super.init()
       }
+    
+    func setTitle(title: String) {
+        self.title = title
+    }
 }

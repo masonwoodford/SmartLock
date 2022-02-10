@@ -17,18 +17,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var alarmTestButton: UIButton!
     var toggleIndex: Int?
     var testLocation = BikeLocation(title: "Test Location", coordinate: CLLocationCoordinate2D(latitude: 36.97720, longitude: -122.05368))
-    var zoomSpan: MKCoordinateSpan?
     let lockIndexKey = "defaultLock"
     let unlockPrompt = "Unlock"
     let lockPrompt = "Lock"
+    let zoomSpan = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     let testCoordinates = CLLocationCoordinate2D(latitude: 36.97720, longitude: -122.05368)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         unlockButton.tintColor = UIColor.red
         unlockButton.setTitle(unlockPrompt, for: UIControl.State.normal)
-        zoomSpan?.latitudeDelta = 500
-        zoomSpan?.longitudeDelta = 500
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +49,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func toggleLock(_ sender: Any) {
+        resetMap()
         if toggleIndex == 0 {
             lockToggle.selectedSegmentIndex = 1
             toggleIndex = 1
@@ -60,11 +59,19 @@ class ViewController: UIViewController {
         }
     }
     
+    func resetMap() {
+        lockMapView.removeAnnotation(testLocation)
+        lockMapView.setRegion(MKCoordinateRegion(.world), animated: true)
+    }
+    
     @IBAction func locateLock(_ sender: Any) {
+        if lockToggle.selectedSegmentIndex == 1 {
+            testLocation.setTitle(title: "Lock 2")
+        } else {
+            testLocation.setTitle(title: "Lock 1")
+        }
         lockMapView.addAnnotation(testLocation)
-        lockMapView.setCenter(testCoordinates, animated: true)
-        let region = MKCoordinateRegion(center: testCoordinates, span: zoomSpan ?? MKCoordinateSpan(latitudeDelta: 250.0, longitudeDelta: 250.0))
-        //lockMapView.setRegion(region, animated: false)
+        lockMapView.setRegion(MKCoordinateRegion(center: testCoordinates, span: zoomSpan), animated: true)
     }
     
 }
